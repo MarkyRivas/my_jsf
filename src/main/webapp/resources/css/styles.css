@@ -1,3 +1,21 @@
-.colorText{
-	color:lime;
-}
+ .colorText {
+            color: lime;
+        }
+
+        .headerTable {
+            text-align: center;
+            background: #E5E5E5;
+            border-bottom: 10px solid #BBB;
+            padding: 16px;
+        }
+
+        .dataTable {
+            width: 80%; /* Ajusta el ancho según tus necesidades */
+            margin: 0 auto; /* Centra la tabla horizontalmente */
+            border-collapse: collapse; /* Combina los bordes de las celdas */
+            margin-top: 20px; /* Espacio superior para separar la tabla del contenido anterior */
+        }
+
+        .dataTable th, .dataTable td {
+            border: 1px solid #BBB; /* Bordes de las celdas */
+            padding: 10px; /* Espaciado interno de las celdas */
