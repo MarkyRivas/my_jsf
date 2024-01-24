@@ -1,14 +1,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 <h:head>
     <title>Pantalla principal</title>
     <h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
 </h:head>
 
 <h:body>
-    Bienvenido a la pagina principal
+
 
     <!-- Tabla JSF con 5 columnas -->
     <h:dataTable id="tblEmpleados" value="#{principalController.empleados}" var="empleado" border="1" headerClass="headerTable">

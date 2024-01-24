@@ -1,28 +1,40 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+
 <h:head>
 	<h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
+	<meta name="viewport" content="width=device-width, user-scalable=no" /><meta/>
+
 </h:head>
 
 <h:body>
 
-	<h:outputLabel value="Bienvenido al login 1"></h:outputLabel>
+ <div class="ui-fluid">
+	<h:form id="formLogin" >
 
-	<h:form id="formLogin">
-		<h:panelGrid columns="2">
-			<h:outputLabel id="txtUsuario" value="Usuario: " required="true"
-				requiredMessage="El usuario es requerido" styleClass="colorText"></h:outputLabel>
-			<h:inputText value="#{loginControlller.usuario}"></h:inputText>
+		<p:growl id="growl" sticky="true" />
+		<p:panel id="pnLogin" header="Inicio de Sesión" style="text-align:center">
+			<p:graphicImage name="imgs/paloma.png" />
+			<p:panelGrid id="pnLGridLogin" columns="1" layout="grid" styleClass="showcase-text-align-center"
+						 columnClasses="ui-g-12 ui-md-12 ui-lg-12, ui-g-12 ui-md-12 ui-lg-12, ui-g-12 ui-md-6 ui-lg-12, ui-g-12 ui-md-6 ui-lg-3" >
 
-			<h:outputLabel value="Contraseña: " styleClass="colorText"></h:outputLabel>
-			<h:inputSecret id="txtPassword" value="#{loginControlller.password}"
-				required="true" requiredMessage="La contraseña es requerida"></h:inputSecret>
+				<p:outputLabel value="Usuario: "
+							  styleClass="colorText" for="txtUsuario"></p:outputLabel>
+				<p:inputText id="txtUsuario" value="#{loginControlller.usuario}"  required="true"  requiredMessage="El usuario es requerido" ></p:inputText>
 
-			<h:commandButton value="Entrar" action="#{loginControlller.ingresar}"></h:commandButton>
-		</h:panelGrid>
+				<p:outputLabel value="Contraseña: "
+							   requiredMessage="La contraseña es requerida" styleClass="colorText" for="txtPassword"></p:outputLabel>
+				<p:password id="txtPassword" value="#{loginControlller.password}" required="true"></p:password>
+
+				<p:outputLabel ></p:outputLabel>
+				<h:commandButton value="Entrar" action="#{loginControlller.ingresar}" update="pnLGridLogin , growl"></h:commandButton>
+			</p:panelGrid>
+		</p:panel>
+
 	</h:form>
-
+ </div>
 </h:body>
 </html>
